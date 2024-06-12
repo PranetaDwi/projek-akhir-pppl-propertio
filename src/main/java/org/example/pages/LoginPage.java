@@ -13,10 +13,6 @@ public class LoginPage {
         loginObject = new LoginObject(driver);
     }
 
-//    By email  = By.id("email");
-//    By password = By.id("password");
-//    By loginBtn = By.xpath("//*[@id=\"login-form\"]/div[3]/button");
-
     public void enterEmail(String user) {
         driver.findElement(loginObject.getInputEmail()).sendKeys(user);
     }
