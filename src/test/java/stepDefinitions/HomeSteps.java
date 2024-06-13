@@ -1,6 +1,8 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +21,12 @@ public class HomeSteps {
             InterruptedException {
         String expectedUrl = "https://beta.propertio.id/dashboard";
         Assert.assertEquals(homePage.getActualUrl(), expectedUrl);
+    }
+
+    @When("Developer mengeklik button project progress")
+    public void developer_mengeklik_button_project_progress() throws
+            InterruptedException{
+        homePage.clickProjectProgressButton();
     }
 
     @After

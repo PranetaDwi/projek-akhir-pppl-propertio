@@ -13,7 +13,7 @@ public class LoginPage {
         loginObject = new LoginObject(driver);
     }
 
-    public void enterEmail(String user) {
+    public void enterEmail(String user) throws InterruptedException{
         driver.findElement(loginObject.getInputEmail()).sendKeys(user);
     }
 
