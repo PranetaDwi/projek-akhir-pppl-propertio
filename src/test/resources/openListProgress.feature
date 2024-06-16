@@ -8,5 +8,3 @@ Scenario:Masuk ke halaman progress project
   When Developer mengeklik button project progress
   Then Developer diarahkan ke halaman project progres
 
-
-
