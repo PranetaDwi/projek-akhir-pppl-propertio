@@ -31,8 +31,6 @@ public class HomeSteps {
     public void developer_mengeklik_button_project_progress() throws
             InterruptedException{
         homePage.clickProjectProgressButton();
-        test.log(Status.INFO, "Login successful");
-
     }
 
     @After

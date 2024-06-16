@@ -1,6 +1,4 @@
-openListProgress.feature
-
-Feature: Developer search a project
+Feature: Developer membuka halaman project progress
 
 Background:Sukses Login
   Given Developer di halaman login
