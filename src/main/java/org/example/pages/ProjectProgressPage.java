@@ -45,4 +45,8 @@ public class ProjectProgressPage {
         driver.findElement(projectProgressObject.getInputUser()).sendKeys(user);
     }
 
+    public void isUserExist() throws InterruptedException {
+        driver.findElement(projectProgressObject.isUserExist()).isDisplayed();
+    }
+
 }

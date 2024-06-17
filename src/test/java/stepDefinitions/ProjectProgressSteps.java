@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -36,5 +37,20 @@ public class ProjectProgressSteps {
     @Then("Hasil pencarian project progress ditemukan")
     public void Hasil_pencarian_project_progress_ditemukan() throws InterruptedException {
         projectProgressPage.isProjectDisplayed();
+    }
+
+    @When("Developer mengeklik button tambah projek progres")
+    public void Developer_mengeklik_button_tambah_projek_progress() throws InterruptedException {
+        projectProgressPage.getCreateProjectProgressButton();
+    }
+
+    @And("Developer mengisi kolom pencarian user")
+    public void Developer_mengisi_kolom_pencarian_user() throws InterruptedException {
+        projectProgressPage.enterUser("userProperti");
+    }
+
+    @Then("Hasil pencarian user ditemukan")
+    public void Then_Hasil_pencarian_user_ditemukan() throws InterruptedException {
+        projectProgressPage.isUserExist();
     }
 }

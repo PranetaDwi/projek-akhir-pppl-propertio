@@ -25,4 +25,8 @@ public class ProjectProgressObject {
     public By getInputUser(){
         return  By.id("search");
     }
+
+    public By isUserExist(){
+        return By.xpath("//*[contains(text(), 'userProperti')]");
+    }
 }
