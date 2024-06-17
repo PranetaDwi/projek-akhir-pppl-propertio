@@ -32,9 +32,17 @@ public class ProjectProgressPage {
         driver.findElement(projectProgressObject.getInputSearchProject()).sendKeys(project);
     }
 
-    public  void isProjectDisplayed(){
+    public  void isProjectDisplayed() throws InterruptedException{
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(projectProgressObject.GetTextProject12345()));
         element.isDisplayed();
+    }
+
+    public void getCreateProjectProgressButton() throws InterruptedException{
+        driver.findElement(projectProgressObject.getCreateProjectProgressButton()).click();
+    }
+
+    public void enterUser(String user) throws InterruptedException{
+        driver.findElement(projectProgressObject.getInputUser()).sendKeys(user);
     }
 
 }

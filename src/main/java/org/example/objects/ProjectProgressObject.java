@@ -17,4 +17,12 @@ public class ProjectProgressObject {
     public By GetTextProject12345(){
         return By.xpath("//*[contains(text(), 'Project 12345')]");
     }
+
+    public By getCreateProjectProgressButton(){
+        return By.id("btn-tambah-proyek");
+    }
+
+    public By getInputUser(){
+        return  By.id("search");
+    }
 }
