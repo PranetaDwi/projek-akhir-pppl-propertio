@@ -20,7 +20,7 @@ public class ProjectProgressPage {
     public ProjectProgressPage(WebDriver driver){
         this.driver = driver;
         projectProgressObject = new ProjectProgressObject(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
     }
 
@@ -47,6 +47,11 @@ public class ProjectProgressPage {
 
     public void isUserExist() throws InterruptedException {
         driver.findElement(projectProgressObject.isUserExist()).isDisplayed();
+    }
+
+    public void getPilihPembeliButton() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getPilihPembeliButton()));
+        element.click();
     }
 
 }

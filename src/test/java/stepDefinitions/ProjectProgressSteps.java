@@ -53,4 +53,10 @@ public class ProjectProgressSteps {
     public void Then_Hasil_pencarian_user_ditemukan() throws InterruptedException {
         projectProgressPage.isUserExist();
     }
+
+    @When("User klik button Pilih Pembeli")
+    public void User_klik_button_Pilih_Pembeli() throws InterruptedException {
+        projectProgressPage.getPilihPembeliButton();
+    }
+
 }
