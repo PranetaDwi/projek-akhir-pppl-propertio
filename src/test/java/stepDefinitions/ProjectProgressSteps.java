@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.bs.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -57,6 +58,23 @@ public class ProjectProgressSteps {
     @When("User klik button Pilih Pembeli")
     public void User_klik_button_Pilih_Pembeli() throws InterruptedException {
         projectProgressPage.getPilihPembeliButton();
+    }
+
+    // DELETE PROJECT
+
+    @When("Developer klik button hapus proyek")
+    public void Developer_klik_button_hapus_proyek() throws InterruptedException {
+        projectProgressPage.deleteProject();
+    }
+
+    @And("Developer mengeklik ya hapus pada modal")
+    public void Developer_mengeklik_ya_hapus_pada_modal() throws InterruptedException {
+        projectProgressPage.YesValidationToDeleteProject();
+    }
+
+    @Then("Sistem menghapus proyek yang dipilih")
+    public void Sistem_menghapus_proyek_yang_dipilih() throws InterruptedException {
+        Assert.assertFalse(projectProgressPage.isDeletedProjectDisplayed());
     }
 
 }

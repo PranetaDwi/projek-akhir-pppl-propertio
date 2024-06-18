@@ -1,7 +1,9 @@
 package org.example.pages;
 
+import io.cucumber.java.sl.In;
 import org.example.objects.LoginObject;
 import org.example.objects.ProjectProgressObject;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -52,6 +54,20 @@ public class ProjectProgressPage {
     public void getPilihPembeliButton() throws InterruptedException {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getPilihPembeliButton()));
         element.click();
+    }
+
+    public void deleteProject() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getDeleteProjectButton()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+    public void YesValidationToDeleteProject() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getYesButtonValidastion()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+    public  boolean isDeletedProjectDisplayed() throws InterruptedException{
+        return driver.findElement(projectProgressObject.GetTextProjectabc()).isDisplayed();
     }
 
 }
