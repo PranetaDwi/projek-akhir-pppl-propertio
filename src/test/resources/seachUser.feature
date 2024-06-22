@@ -6,7 +6,9 @@ Background:Sukses Login
   When Developer mengeklik button project progress
   Then Developer diarahkan ke halaman project progres
 
-Scenario:Berhasil mencari project progress
-  When Developer mengisi kolom pencarian project progress
-  Then Hasil pencarian project progress ditemukan
+Scenario:Berhasil menemukan user
+  When Developer mengeklik button tambah projek progres
+  And Developer mengisi kolom pencarian user
+  Then Hasil pencarian user ditemukan
+
 
