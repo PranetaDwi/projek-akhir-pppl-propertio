@@ -7,5 +7,5 @@ Feature: Edit Proyek di Progress Proyek
 
   Scenario: Negative - Edit Proyek dengan Data Salah atau Tidak Lengkap
     Given User di halaman Progress Proyek
-    When User klik button "Edit proyek" mengisi form dengan data kosong dan click button "Simpan"
+    When User klik button Edit proyek mengisi form dengan data kosong dan click button Simpan
     Then Sistem menampilkan alert pada form

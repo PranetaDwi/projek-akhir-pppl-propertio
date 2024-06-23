@@ -7,5 +7,5 @@ Feature: Edit Proyek di Progress Proyek
 
   Scenario: Positive - Edit Proyek
     Given User di halaman Progress Proyek
-    When User klik button "Edit proyek" kemudian user kemudian click "Simpan"
+    When User klik button Edit proyek kemudian user kemudian click Simpan
     Then Sistem menampilkan proyek yang diubah

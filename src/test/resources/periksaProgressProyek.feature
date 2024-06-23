@@ -6,11 +6,11 @@ Feature: Periksa Progress Proyek di Monitoring dan Chat
   Scenario: Pengembang Memilih Proyek untuk Dilihat Progressnya
     Given Pengembang berada di Dashboard
     When Pengembang navigasi ke halaman Progress Proyek
-    And Pengembang memilih proyek "Pembangunan Gedung Perkantoran ABC"
+    And Pengembang memilih proyek
 
   Scenario: Pengembang Melihat Detail Progress Proyek
     Given Pengembang telah memilih proyek untuk dilihat progressnya
-    When Pengembang klik button "Lihat Progress"
+    When Pengembang klik button Lihat Progress
     Then Pengguna diarahkan ke halaman Monitoring dan Chat
 
   Scenario: Pengguna Melihat Informasi Lengkap Proyek dan Progress Proyek

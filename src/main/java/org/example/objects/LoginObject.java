@@ -19,8 +19,11 @@ public class LoginObject {
         return By.id("password");
     }
 
-    public By getLoginButton(){
+    public By getLoginButton() {
         return By.xpath("//*[@id=\"login-form\"]/div[3]/button");
+    }
+    public By getAlert(){
+        return new By.ByXPath("/html/body/div[6]/div");
     }
 
 }

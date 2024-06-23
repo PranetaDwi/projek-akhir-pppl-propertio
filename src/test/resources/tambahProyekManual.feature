@@ -7,5 +7,5 @@ Feature: Menambah Proyek di Progress Proyek
 
   Scenario: Positive - Menambah Proyek Baru
     Given User di halaman Progress Proyek
-    When User klik button "Tambah proyek" dan mengisi form kemudian click "Simpan"
+    When User klik button Tambah proyek dan mengisi form kemudian click button Simpan
     Then Sistem menampilkan proyek yang ditambahkan

@@ -57,5 +57,4 @@ public class ManualCreateProjectObject {
     public By getInputProjectEndDate(){
         return By.id("inputTanggalAkhir");
     }
-
 }

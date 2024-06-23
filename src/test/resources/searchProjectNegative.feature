@@ -7,5 +7,5 @@ Feature: Mencari Proyek di Progress Proyek
 
   Scenario: Negative - Mencari Proyek yang Tidak Ada
     Given User di halaman Progress Proyek
-    When User klik Search bar dan mengetik nama proyek "Proyek ABS"
-    Then Sistem menampilkan pesan "Proyek tidak ditemukan"
+    When User klik Search bar dan mengetik nama proyek "ProyekSarip"
+    Then Sistem tidak menampilkan list proyek

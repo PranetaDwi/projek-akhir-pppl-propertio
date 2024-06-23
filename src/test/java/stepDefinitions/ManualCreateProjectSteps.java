@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.example.pages.ManualCreateProjectPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -22,4 +23,6 @@ public class ManualCreateProjectSteps {
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
     }
+
+
 }

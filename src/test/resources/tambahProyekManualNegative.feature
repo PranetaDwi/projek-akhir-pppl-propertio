@@ -7,5 +7,5 @@ Feature: Menambah Proyek di Progress Proyek
 
   Scenario: Negative - Menambah Proyek dengan Data Salah atau Tidak Lengkap
     Given User di halaman Progress Proyek
-    When User klik button "Tambah proyek" dan memasukkan nama pembeli "Budi Santoso" dan memasukan data kosong dan click button "Simpan"
+    When User klik button Tambah proyek dan memasukkan nama pembeli dan memasukan data kosong dan click button Simpan
     Then Sistem menampilkan alert pada form

@@ -70,4 +70,51 @@ public class ProjectProgressPage {
         return driver.findElement(projectProgressObject.GetTextProjectabc()).isDisplayed();
     }
 
+    public void enterHargaProyek(String hargaProyek) {
+        // Implementasi untuk memasukkan harga proyek
+    }
+
+    public void enterNamaPembeli(String namaPembeli) {
+        // Implementasi untuk memasukkan nama pembeli
+    }
+
+    public void enterNomorPembeli(String nomorPembeli) {
+        // Implementasi untuk memasukkan nomor pembeli
+    }
+
+    public void enterAlamatLengkap(String alamatLengkap) {
+        // Implementasi untuk memasukkan alamat lengkap
+    }
+
+    public void selectProvinsi(String provinsi) {
+        // Implementasi untuk memilih provinsi dari dropdown
+    }
+
+    public void selectKota(String kota) {
+        // Implementasi untuk memilih kota dari dropdown
+    }
+
+    public void selectKecamatan(String kecamatan) {
+        // Implementasi untuk memilih kecamatan dari dropdown
+    }
+
+    public void selectStatusProyek(String statusProyek) {
+        // Implementasi untuk memilih status proyek dari dropdown
+    }
+
+    public void enterTanggalMulai(String tanggalMulai) {
+        // Implementasi untuk memasukkan tanggal mulai
+    }
+
+    public void enterTanggalAkhir(String tanggalAkhir) {
+        // Implementasi untuk memasukkan tanggal akhir
+    }
+
+    public void editNamaProyek(String namaProyekEdit) {
+        // Implementasi untuk mengedit nama proyek
+    }
+
+    public void editProyekTanpaNamaDanHarga() {
+        // Implementasi untuk mengedit proyek tanpa nama dan harga
+    }
 }
