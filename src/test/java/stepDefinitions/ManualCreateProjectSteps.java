@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import org.example.pages.ManualCreateProjectPage;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 public class ManualCreateProjectSteps {
@@ -39,6 +40,28 @@ public class ManualCreateProjectSteps {
         manualCreateProjectPage.enterProjectEndDate("30/12/2025");
         Thread.sleep(500);
         manualCreateProjectPage.clickSimpanButton();
+    }
+
+    @Then("Developer mengisi formulir tambah proyek tanpa mengisi nama projek progres")
+    public void Developer_mengisi_formulir_tambah_proyek_tanpa_mengisi_nama_projek_progres() throws InterruptedException {
+        manualCreateProjectPage.enterPrice("85060001");
+        manualCreateProjectPage.enterAddress("Solo");
+        manualCreateProjectPage.clickProvinceDropdown();
+        manualCreateProjectPage.selectProvinceFromDropdown();
+        manualCreateProjectPage.clickCityropdown();
+        manualCreateProjectPage.selectCityFromDropdown();
+        manualCreateProjectPage.clickDiscrictDropdown();
+        manualCreateProjectPage.selectDistrictFromDropdown();
+        manualCreateProjectPage.enterProjectStartDate("10/11/2024");
+        manualCreateProjectPage.enterProjectEndDate("30/12/2025");
+        Thread.sleep(500);
+        manualCreateProjectPage.clickSimpanButton();
+    }
+
+    @Then("Developer tetap di halaman projek progres")
+    public void Developer_tetap_di_halaman_projek_progres() throws InterruptedException {
+        String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
+        Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
     }
 
 }

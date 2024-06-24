@@ -1,4 +1,4 @@
-Feature: Menambah Proyek Manual
+Feature: Membuat manual proyek tanpa nama proyek
 
 Background:Sukses Login
   Given Developer di halaman login
@@ -10,5 +10,5 @@ Background:Sukses Login
 
 Scenario:Membuka halaman create manual project progress
   When User klik button Pilih Pembeli
-  And Developer mengisi formulir tambah proyek
-  Then Developer diarahkan ke halaman project progres
+  And Developer mengisi formulir tambah proyek tanpa mengisi nama projek progres
+  Then Developer tetap di halaman projek progres
