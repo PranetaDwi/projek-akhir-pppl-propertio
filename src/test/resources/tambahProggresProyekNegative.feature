@@ -1,13 +1,15 @@
 Feature: Tambah Progress Proyek di Monitoring dan Chat
 
-  Background: Sukses Login ke Sistem
-    Given Pengembang sudah login ke sistem
+Background: Sukses Login dan Navigasi ke Halaman Progress Proyek
+  Given Developer di halaman login
+  When Developer mengisi kredensial valid
+  When Developer mengeklik button project progress
+  Then Developer diarahkan ke halaman project progres
 
-  Scenario: Pengembang Memilih Proyek untuk Menambah Progress dengan Persentase Kurang
-    Given Pengembang berada di halaman Progress Proyek
-    And Pengembang telah memilih proyek "Pembangunan Gedung Perkantoran ABC"
+Scenario: Pengembang Memilih Proyek untuk Dilihat Progressnya
+  When Developer mengeklik button lihat progress
+  Then Developer diarahkan ke halaman progres dan alamat proyek
 
-  Scenario: Pengembang Tambah Progress Proyek dengan Persentase Kurang
-    Given Pengembang telah memilih proyek untuk ditambahkan progressnya
-    When Pengembang klik button "Lihat Progress" click button "Tambah Proggres"
-    Then Pengguna tidak dapat memasukkan progress karena persentase lebih rendah dari progress sebelumnya
+Scenario: Pengembang Tambah Progress Proyek dengan Persentase Kurang
+  When Developer mengisi data progres tidak valid
+  Then Muncul pesan peringatan
