@@ -10,12 +10,12 @@ public class ManualCreateProjectObject {
         this.driver = driver;
     }
 
-    public By GetOldBuyerName(){
-        return By.xpath("//*[contains(text(), 'userProperti')]");
+    public By getTitlePage() {
+        return By.xpath("//*[contains(text(), 'Tambah Proyek Pengembang Manual')]");
     }
 
     public By getInputProjectName(){
-        return By.name("title");
+        return By.id("inputNamaProyek");
     }
 
     public By getInputProjectPrice(){
@@ -34,27 +34,35 @@ public class ManualCreateProjectObject {
         return By.name("address");
     }
 
-    public By getInputProjectProvince(){
-        return By.id("province");
+    public By getProvinceDropdown(){
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[5]/div[1]/div/div/button");
     }
 
-    public By getInputProjectCity(){
-        return By.id("city");
+    public  By getSelectProvinceDropdown(){
+        return By.id("bs-select-1-3");
     }
 
-    public By getInputProjectDistrict(){
-        return By.id("district");
+    public By getCityDropdown(){
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[5]/div[2]/div/div/button");
     }
 
-    public By getInputProjectStatus(){
-        return By.name("status");
+    public  By getSelectCityDropdown(){
+        return By.id("bs-select-2-18");
     }
 
-    public By getInputProjectStartDate(){
+    public By getDistrictDropdown(){
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[5]/div[3]/div/div/button");
+    }
+
+    public  By getSelectDistrictDropdown(){
+        return By.id("bs-select-3-5");
+    }
+
+    public By getFieldProjectStartDate(){
         return By.id("inputTanggalMulai");
     }
 
-    public By getInputProjectEndDate(){
+    public By getFieldProjectEndDate(){
         return By.id("inputTanggalAkhir");
     }
 

@@ -1,6 +1,8 @@
 package org.example.pages;
 
+import io.cucumber.java.sl.In;
 import org.example.objects.ManualCreateProjectObject;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,14 +27,15 @@ public class ManualCreateProjectPage {
         return driver.getCurrentUrl();
     }
 
-    public void isOldBuyerNameAttached() throws InterruptedException {
-        driver.findElement(manualCreateProjectObject.GetOldBuyerName()).isDisplayed();
+    public void isTitleExist() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getTitlePage()));
+        element.isDisplayed();
     }
 
     // ADD MANUAL PROJECT
     public void enterTitle(String title) throws InterruptedException{
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getInputProjectName()));
-        element.sendKeys(title);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + title + "';", element);
     }
 
     public void enterPrice(String price) throws InterruptedException{
@@ -45,31 +48,49 @@ public class ManualCreateProjectPage {
         element.sendKeys(address);
     }
 
-    public void enterProvince(String province) throws InterruptedException{
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getInputProjectProvince()));
-        element.sendKeys(province);
+    public void clickProvinceDropdown() throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getProvinceDropdown()));
+        element.click();
     }
 
-    public void enterCity(String city) throws InterruptedException{
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getInputProjectCity()));
-        element.sendKeys(city);
+    public void selectProvinceFromDropdown() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getSelectProvinceDropdown()));
+        element.click();
     }
 
-    public void enterDistrict(String district) throws InterruptedException{
-        driver.findElement(manualCreateProjectObject.getInputProjectDistrict()).sendKeys(district);
+    public void clickCityropdown() throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getCityDropdown()));
+        element.click();
     }
 
-    public void enterStartDate(String startDate) throws InterruptedException{
-        driver.findElement(manualCreateProjectObject.getInputProjectStartDate()).sendKeys(startDate);
+    public void selectCityFromDropdown() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getSelectCityDropdown()));
+        element.click();
     }
 
-    public void enterEndDate(String endDate) throws InterruptedException{
-        driver.findElement(manualCreateProjectObject.getInputProjectEndDate()).sendKeys(endDate);
+    public void clickDiscrictDropdown() throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getDistrictDropdown()));
+        element.click();
+    }
+
+    public void selectDistrictFromDropdown() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getSelectDistrictDropdown()));
+        element.click();
+    }
+
+    public void enterProjectStartDate(String startDate) throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getFieldProjectStartDate()));
+        element.sendKeys(startDate);
+    }
+
+    public void enterProjectEndDate(String endDate) throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getFieldProjectEndDate()));
+        element.sendKeys(endDate);
     }
 
     public void clickSimpanButton() throws InterruptedException{
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(manualCreateProjectObject.getSimpanButton()));
-        element.click();
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(manualCreateProjectObject.getSimpanButton()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
 }

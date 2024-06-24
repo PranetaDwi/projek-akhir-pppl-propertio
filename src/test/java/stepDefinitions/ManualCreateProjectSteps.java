@@ -11,26 +11,33 @@ public class ManualCreateProjectSteps {
 
     ManualCreateProjectPage manualCreateProjectPage;
 
-    public ManualCreateProjectSteps(WebDriver driver) {
-        this.driver = driver;
+    public ManualCreateProjectSteps() {
+        this.driver = Hooks.getDriver();
         this.manualCreateProjectPage = new ManualCreateProjectPage(driver);
     }
 
     @Then("Developer di halaman formulir tambah projek manual")
     public void Developer_di_halaman_formulir_tambah_projek_manual() throws
             InterruptedException {
-        manualCreateProjectPage.isOldBuyerNameAttached();
+        manualCreateProjectPage.isTitleExist();
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
     }
 
     @And("Developer mengisi formulir tambah proyek")
     public void Developer_mengisi_formulir_tambah_proyek() throws InterruptedException{
-        manualCreateProjectPage.enterTitle("abc");
-        manualCreateProjectPage.enterPrice("50000000");
-        manualCreateProjectPage.enterAddress("JALAN SENTOLO BROSOT");
-        manualCreateProjectPage.enterProvince("D.I. YOGYAKARTA");
-        manualCreateProjectPage.enterCity("KULON PROGO");
+        manualCreateProjectPage.enterTitle("Sangat baik");
+        manualCreateProjectPage.enterPrice("500000");
+        manualCreateProjectPage.enterAddress("Kulon Progo");
+        manualCreateProjectPage.clickProvinceDropdown();
+        manualCreateProjectPage.selectProvinceFromDropdown();
+        manualCreateProjectPage.clickCityropdown();
+        manualCreateProjectPage.selectCityFromDropdown();
+        manualCreateProjectPage.clickDiscrictDropdown();
+        manualCreateProjectPage.selectDistrictFromDropdown();
+        manualCreateProjectPage.enterProjectStartDate("24/12/2024");
+        manualCreateProjectPage.enterProjectEndDate("30/12/2025");
+        Thread.sleep(500);
         manualCreateProjectPage.clickSimpanButton();
     }
 

@@ -1,7 +1,5 @@
 package org.example.pages;
 
-import io.cucumber.java.sl.In;
-import org.example.objects.LoginObject;
 import org.example.objects.ProjectProgressObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +20,7 @@ public class ProjectProgressPage {
     public ProjectProgressPage(WebDriver driver){
         this.driver = driver;
         projectProgressObject = new ProjectProgressObject(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(25));
 
     }
 
