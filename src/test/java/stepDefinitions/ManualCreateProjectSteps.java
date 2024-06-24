@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.And;
 import org.example.pages.ManualCreateProjectPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -22,4 +23,15 @@ public class ManualCreateProjectSteps {
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
     }
+
+    @And("Developer mengisi formulir tambah proyek")
+    public void Developer_mengisi_formulir_tambah_proyek() throws InterruptedException{
+        manualCreateProjectPage.enterTitle("abc");
+        manualCreateProjectPage.enterPrice("50000000");
+        manualCreateProjectPage.enterAddress("JALAN SENTOLO BROSOT");
+        manualCreateProjectPage.enterProvince("D.I. YOGYAKARTA");
+        manualCreateProjectPage.enterCity("KULON PROGO");
+        manualCreateProjectPage.clickSimpanButton();
+    }
+
 }

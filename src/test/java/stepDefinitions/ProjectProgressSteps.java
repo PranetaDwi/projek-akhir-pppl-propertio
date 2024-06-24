@@ -1,16 +1,11 @@
 package stepDefinitions;
 
-import io.cucumber.java.bs.I;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.pages.HomePage;
 import org.example.pages.ProjectProgressPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
-import static stepDefinitions.Hooks.extent;
 
 public class ProjectProgressSteps {
 

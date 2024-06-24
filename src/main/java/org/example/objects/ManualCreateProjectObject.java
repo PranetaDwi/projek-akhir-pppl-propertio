@@ -58,4 +58,8 @@ public class ManualCreateProjectObject {
         return By.id("inputTanggalAkhir");
     }
 
+    public By getSimpanButton(){
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[8]/button[2]");
+    }
+
 }
