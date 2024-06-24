@@ -13,6 +13,8 @@ public class Hooks {
 
     static ExtentReports extent;
 
+    static ExtentTest test;
+
     @Before
     public void setUp(){
         if (driver == null){
@@ -28,10 +30,22 @@ public class Hooks {
             Hooks.driver.quit();
             Hooks.driver = null;
         }
+        if (extent != null) {
+            extent.flush();
+        }
     }
 
     public static WebDriver getDriver() {
         if (driver == null) new Hooks().setUp();
         return driver;
+    }
+
+    public static ExtentTest startTest(String testName) {
+        test = extent.createTest(testName);
+        return test;
+    }
+
+    public static ExtentTest getTest() {
+        return test;
     }
 }

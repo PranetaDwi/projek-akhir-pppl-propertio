@@ -74,4 +74,9 @@ public class ProjectProgressPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
+    public void clickProgressProyekButton() throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getProgressProyekButton()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
 }

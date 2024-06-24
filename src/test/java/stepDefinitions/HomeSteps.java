@@ -23,7 +23,9 @@ public class HomeSteps {
     @Then("Developer diarahkan ke dashboard")
     public void developer_diarahkan_ke_dashboard() throws
             InterruptedException {
+        Thread.sleep(2000);
         String expectedUrl = "https://beta.propertio.id/dashboard";
+        Thread.sleep(2000);
         Assert.assertEquals(homePage.getActualUrl(), expectedUrl);
     }
 

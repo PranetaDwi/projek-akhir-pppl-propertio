@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.example.pages.ProgressPage;
 import org.junit.Assert;
@@ -20,4 +21,13 @@ public class ProgressSteps {
             Thread.sleep(2000);
             Assert.assertEquals(progressPage.getActualUrl(), expectedUrl);
     }
+
+    @Then("Developer diarahkan ke halaman progres dan alamat proyek")
+    public void Developer_diarahkan_ke_halaman_progres_dan_alamat_proyek() throws InterruptedException {
+        String expectedUrl = "https://beta.propertio.id/project-progress/progress/9?";
+        Thread.sleep(2000);
+        progressPage.isDetailProjectDisplayed();
+        Assert.assertEquals(progressPage.getActualUrl(), expectedUrl);
+    }
+
 }
