@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.cucumber.java.sl.In;
 import org.example.objects.ProjectProgressObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -66,6 +67,11 @@ public class ProjectProgressPage {
 
     public  boolean isDeletedProjectDisplayed() throws InterruptedException{
         return driver.findElement(projectProgressObject.GetTextProjectabc()).isDisplayed();
+    }
+
+    public void clickEditProyekButton() throws InterruptedException{
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(projectProgressObject.getEditProyekButton()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
 }

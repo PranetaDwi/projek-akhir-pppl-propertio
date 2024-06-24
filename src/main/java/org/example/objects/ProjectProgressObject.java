@@ -45,4 +45,8 @@ public class ProjectProgressObject {
     public By GetTextProjectabc(){
         return By.xpath("//*[contains(text(), 'abc')]");
     }
+
+    public By getEditProyekButton(){
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[4]/div/div[2]/div[4]/div/form/button");
+    }
 }

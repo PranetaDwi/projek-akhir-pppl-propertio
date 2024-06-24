@@ -72,4 +72,9 @@ public class ProjectProgressSteps {
         Assert.assertFalse(projectProgressPage.isDeletedProjectDisplayed());
     }
 
+    @When("User klik button edit proyek")
+    public void User_klik_button_edit_proyek() throws InterruptedException {
+        projectProgressPage.clickEditProyekButton();
+    }
+
 }
