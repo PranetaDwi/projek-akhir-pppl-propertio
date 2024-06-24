@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Then;
 import org.example.pages.ProgressPage;
-import org.example.pages.ProjectProgressPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 

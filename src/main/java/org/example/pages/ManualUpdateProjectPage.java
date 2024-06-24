@@ -48,4 +48,8 @@ public class ManualUpdateProjectPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
+    public String getActualUrl(){
+        return driver.getCurrentUrl();
+    }
+
 }
