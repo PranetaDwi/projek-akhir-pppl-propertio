@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.example.pages.ProgressPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +29,11 @@ public class ProgressSteps {
         Thread.sleep(2000);
         progressPage.isDetailProjectDisplayed();
         Assert.assertEquals(progressPage.getActualUrl(), expectedUrl);
+    }
+
+    @When("Developer mengeklik button tambah progress")
+    public void Developer_mengeklik_button_tambah_progress() throws InterruptedException {
+        progressPage.clickAddProgressButton();
     }
 
 }

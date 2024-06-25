@@ -2,7 +2,9 @@ package stepDefinitions;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import org.example.ExtentReportManager;
+import com.aventstack.extentreports.Status;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -15,37 +17,31 @@ public class Hooks {
 
     static ExtentTest test;
 
-    @Before
-    public void setUp(){
-        if (driver == null){
-            extent = ExtentReportManager.getInstance();
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
+    @BeforeAll
+    static void setupDriver() {
+        extent = ExtentReportManager.getInstance();
+        if (driver != null) {
+            return;
         }
-    }
-
-    @After
-    public void tearDown() {
-        if (Hooks.driver != null) {
-            Hooks.driver.quit();
-            Hooks.driver = null;
-        }
-        if (extent != null) {
-            extent.flush();
-        }
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        test = extent.createTest("Setup Driver & Open Browser");
     }
 
     public static WebDriver getDriver() {
-        if (driver == null) new Hooks().setUp();
+        if (driver == null) {
+            setupDriver();
+        }
         return driver;
     }
 
-    public static ExtentTest startTest(String testName) {
-        test = extent.createTest(testName);
-        return test;
-    }
+    @AfterAll
+    public static void closeBrowser() {
+        if (driver != null) {
+            driver.quit();
+        }
 
-    public static ExtentTest getTest() {
-        return test;
+        test.log(Status.INFO, "Browser closed");
+        extent.flush();
     }
 }

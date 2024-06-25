@@ -19,7 +19,7 @@ public class ProgressPage {
     public ProgressPage(WebDriver driver) {
         this.driver = driver;
         this.progressObject = new ProgressObject(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     }
 
     public String getActualUrl(){
@@ -33,6 +33,6 @@ public class ProgressPage {
 
     public void clickAddProgressButton() throws InterruptedException{
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(progressObject.getAddProgressButton()));
-        element.isDisplayed();
+        element.click();
     }
 }

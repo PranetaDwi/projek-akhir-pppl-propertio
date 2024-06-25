@@ -15,7 +15,7 @@ public class ProgressObject {
     }
 
     public By getAddProgressButton(){
-        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/form/div/button");
+        return By.id("btn-tambah-proyek");
     }
 
 }

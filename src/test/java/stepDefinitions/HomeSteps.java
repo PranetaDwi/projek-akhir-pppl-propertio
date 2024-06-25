@@ -35,8 +35,4 @@ public class HomeSteps {
         homePage.clickProjectProgressButton();
     }
 
-    @After
-    public void tearUp() {
-        new Hooks().tearDown();
-    }
 }

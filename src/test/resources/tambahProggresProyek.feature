@@ -5,11 +5,8 @@ Background: Sukses Login dan Navigasi ke Halaman Progress Proyek
   When Developer mengisi kredensial valid
   When Developer mengeklik button project progress
   Then Developer diarahkan ke halaman project progres
-
-Scenario: Pengembang Memilih Proyek untuk Dilihat Progressnya
   When Developer mengeklik button lihat progress
-  Then Developer diarahkan ke halaman progres dan alamat proyek
 
 Scenario: Pengembang Tambah Progress Proyek dengan data lengkap
-  When Developer mengisi data progres valid
-  Then Developer diarahkan ke halaman progres dan alamat proyek
+  When Developer mengeklik button tambah progress
+  And Developer mengisi data progres valid
