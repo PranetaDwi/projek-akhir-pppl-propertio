@@ -57,4 +57,9 @@ public class CreateProgressPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
+    public void isErrorDisplayed() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(createProgressObject.getPercentageError()));
+        element.isDisplayed();
+    }
+
 }

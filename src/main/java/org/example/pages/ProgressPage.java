@@ -35,4 +35,9 @@ public class ProgressPage {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(progressObject.getAddProgressButton()));
         element.click();
     }
+
+    public void clickUpdateProgressaButton() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(progressObject.getUpdateProgressButton()));
+        element.click();
+    }
 }

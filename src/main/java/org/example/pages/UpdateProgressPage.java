@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.example.objects.UpdateProgressObject;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,21 +28,21 @@ public class UpdateProgressPage {
 
     public void enterBriefDescription(String briefDescription) throws InterruptedException{
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(updateProgressObject.getBriefDescriptionField()));
-        element.sendKeys(briefDescription);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + briefDescription + "';", element);
     }
 
     public void enterDetailDescription(String detailDescription) throws InterruptedException{
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(updateProgressObject.getDetailDescriptionField()));
-        element.sendKeys(detailDescription);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + detailDescription + "';", element);
     }
 
-    public void enterPercentage(String percentage) throws InterruptedException{
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(updateProgressObject.getPercentageField()));
-        element.sendKeys(percentage);
+    public void clickSimpanButton() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(updateProgressObject.getSimpanButtonField()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
-    public void enterImage(String imagePath) throws InterruptedException{
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(updateProgressObject.getUploadImageField()));
-        element.sendKeys(imagePath);
+    public void isErrorDisplayed() throws InterruptedException {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(updateProgressObject.getPercentageError()));
+        element.isDisplayed();
     }
 }

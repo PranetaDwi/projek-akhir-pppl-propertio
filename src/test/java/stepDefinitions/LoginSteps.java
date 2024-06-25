@@ -22,14 +22,15 @@ public class LoginSteps {
     @Given("Developer di halaman login")
     public void developer_di_halaman_login() {
         driver.get("https://beta.propertio.id/login");
-        Hooks.test.log(Status.INFO, "Developer di halaman login");
+        Hooks.loginTest.log(Status.INFO, "Developer di halaman login");
     }
 
     @When("Developer mengisi kredensial valid")
     public void developer_mengisi_kredensial_valid() throws InterruptedException {
+        Thread.sleep(3000);
         loginPage.enterEmail("developer@mail.com");
         loginPage.enterPassword("11111111");
         loginPage.clickLogin();
-        Hooks.test.log(Status.PASS, "Developer mengisi kredensial valid");
+        Hooks.loginTest.log(Status.PASS, "Developer mengisi kredensial valid");
     }
 }

@@ -23,7 +23,7 @@ public class CreateProgressObject {
     }
 
     public By getUploadImageField() throws InterruptedException {
-        return By.id("fileInputMedia");
+        return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[3]/input");
     }
 
     public By getTelusuriFileButtonField() throws InterruptedException {
@@ -33,6 +33,11 @@ public class CreateProgressObject {
 
     public By getSimpanButtonField() throws InterruptedException {
         return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[2]/form/div[4]/button[2]");
+    }
+    
+
+    public By getPercentageError() throws InterruptedException{
+        return By.xpath("//*[contains(text(), 'Percentage harus bernilai antara 10 sampai 100.')]");
     }
 
 }

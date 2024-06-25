@@ -24,14 +24,14 @@ public class HomeSteps {
         String expectedUrl = "https://beta.propertio.id/dashboard";
         Thread.sleep(2000);
         Assert.assertEquals(homePage.getActualUrl(), expectedUrl);
-        Hooks.test.log(Status.PASS, "Developer diarahkan ke dashboard");
+        Hooks.loginTest.log(Status.PASS, "Developer diarahkan ke dashboard");
     }
 
     @When("Developer mengeklik button project progress")
     public void developer_mengeklik_button_project_progress() throws
             InterruptedException{
         homePage.clickProjectProgressButton();
-        Hooks.test.log(Status.INFO, "Developer mengeklik button project progress");
+        Hooks.searchUserTest.log(Status.INFO, "Developer mengeklik button project progress");
     }
 
 }
