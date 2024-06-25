@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.example.pages.CreateProgressPage;
@@ -23,5 +24,6 @@ public class CreateProgressSteps {
         createProgressPage.enterPercentage("10");
         Thread.sleep(1000);
         createProgressPage.enterImage("C:\\Users\\ASUS\\Downloads\\exampleImage.jpg");
+        Hooks.test.log(Status.INFO, "Developer mengisi data progres valid");
     }
 }

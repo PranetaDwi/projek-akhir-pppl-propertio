@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +24,7 @@ public class LoginSteps {
     public void developer_di_halaman_login() {
         test = extent.createTest("My First Test", "Sample description");
         driver.get("https://beta.propertio.id/login");
+        Hooks.test.log(Status.INFO, "Developer di halaman login");
     }
 
     @When("Developer mengisi kredensial valid")
@@ -29,5 +32,6 @@ public class LoginSteps {
         loginPage.enterEmail("developer@mail.com");
         loginPage.enterPassword("11111111");
         loginPage.clickLogin();
+        Hooks.test.log(Status.INFO, "Developer mengisi kredensial valid");
     }
 }

@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import org.example.pages.ManualCreateProjectPage;
@@ -23,6 +24,7 @@ public class ManualCreateProjectSteps {
         manualCreateProjectPage.isTitleExist();
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
+        Hooks.test.log(Status.INFO, "Developer di halaman formulir tambah projek manual");
     }
 
     @And("Developer mengisi formulir tambah proyek")
@@ -40,6 +42,7 @@ public class ManualCreateProjectSteps {
         manualCreateProjectPage.enterProjectEndDate("30/12/2025");
         Thread.sleep(500);
         manualCreateProjectPage.clickSimpanButton();
+        Hooks.test.log(Status.INFO, "Developer mengisi formulir tambah proyek");
     }
 
     @Then("Developer mengisi formulir tambah proyek tanpa mengisi nama projek progres")
@@ -56,12 +59,14 @@ public class ManualCreateProjectSteps {
         manualCreateProjectPage.enterProjectEndDate("30/12/2025");
         Thread.sleep(500);
         manualCreateProjectPage.clickSimpanButton();
+        Hooks.test.log(Status.INFO, "Developer mengisi formulir tambah proyek tanpa mengisi nama projek progres");
     }
 
     @Then("Developer tetap di halaman projek progres")
     public void Developer_tetap_di_halaman_projek_progres() throws InterruptedException {
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
+        Hooks.test.log(Status.INFO, "Developer tetap di halaman projek progres");
     }
 
 }

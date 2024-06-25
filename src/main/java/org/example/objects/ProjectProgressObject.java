@@ -15,7 +15,7 @@ public class ProjectProgressObject {
     }
 
     public By GetTextProject12345(){
-        return By.xpath("//*[contains(text(), 'Project 12345')]");
+        return By.xpath("//*[contains(text(), 'projek 12345')]");
     }
 
     public By getCreateProjectProgressButton(){
@@ -53,6 +53,5 @@ public class ProjectProgressObject {
     public By getProgressProyekButton(){
         return By.xpath("/html/body/div/div[1]/div[2]/div/div[2]/div/div[4]/div/div[2]/div[3]/div[2]/form/button");
     }
-
 
 }

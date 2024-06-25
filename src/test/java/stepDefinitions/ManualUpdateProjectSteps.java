@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.example.pages.ManualUpdateProjectPage;
@@ -24,6 +25,7 @@ public class ManualUpdateProjectSteps {
         manualUpdateProjectPage.enterBuyerPhone("6298746756123");
         Thread.sleep(3000);
         manualUpdateProjectPage.clickSimpanButton();
+        Hooks.test.log(Status.INFO, "Developer mengisi formulir dengan data lengkap");
     }
 
     @And("Developer mengisi formulir dengan ada data kosong")
@@ -34,6 +36,7 @@ public class ManualUpdateProjectSteps {
         manualUpdateProjectPage.enterBuyerPhone("6298746756123");
         Thread.sleep(3000);
         manualUpdateProjectPage.clickSimpanButton();
+        Hooks.test.log(Status.INFO, "Developer mengisi formulir dengan ada data kosong");
     }
 
     @Then("Developer diarahkan ke halaman update")
@@ -41,6 +44,6 @@ public class ManualUpdateProjectSteps {
         String expectedUrl = "https://beta.propertio.id/project-progress/edit/9?";
         Thread.sleep(3000);
         Assert.assertEquals(manualUpdateProjectPage.getActualUrl(), expectedUrl);
-
+        Hooks.test.log(Status.INFO, "Developer diarahkan ke halaman update");
     }
 }
