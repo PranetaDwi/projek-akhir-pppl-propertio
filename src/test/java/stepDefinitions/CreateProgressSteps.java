@@ -2,9 +2,7 @@ package stepDefinitions;
 
 import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.When;
 import org.example.pages.CreateProgressPage;
-import org.example.pages.ManualCreateProjectPage;
 import org.openqa.selenium.WebDriver;
 
 public class CreateProgressSteps {

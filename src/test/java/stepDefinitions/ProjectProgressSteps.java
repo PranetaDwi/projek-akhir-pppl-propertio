@@ -24,7 +24,7 @@ public class ProjectProgressSteps {
             InterruptedException {
         String expectedUrl = "https://beta.propertio.id/project-progress";
         Assert.assertEquals(projectProgressPage.getActualUrlProjectProgress(), expectedUrl);
-        Hooks.test.log(Status.INFO, "Developer diarahkan ke halaman project progres");
+        Hooks.test.log(Status.PASS, "Developer diarahkan ke halaman project progres");
     }
 
     @When("Developer mengisi kolom pencarian project progress")
@@ -36,7 +36,7 @@ public class ProjectProgressSteps {
     @Then("Hasil pencarian project progress ditemukan")
     public void Hasil_pencarian_project_progress_ditemukan() throws InterruptedException {
         projectProgressPage.isProjectDisplayed();
-        Hooks.test.log(Status.INFO, "Hasil pencarian project progress ditemukan");
+        Hooks.test.log(Status.PASS, "Hasil pencarian project progress ditemukan");
     }
 
     @When("Developer mengeklik button tambah projek progres")

@@ -24,7 +24,7 @@ public class HomeSteps {
         String expectedUrl = "https://beta.propertio.id/dashboard";
         Thread.sleep(2000);
         Assert.assertEquals(homePage.getActualUrl(), expectedUrl);
-        Hooks.test.log(Status.INFO, "Developer diarahkan ke dashboard");
+        Hooks.test.log(Status.PASS, "Developer diarahkan ke dashboard");
     }
 
     @When("Developer mengeklik button project progress")

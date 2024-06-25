@@ -8,7 +8,7 @@ Background:Sukses Login
   When Developer mengeklik button tambah projek progres
   And Developer mengisi kolom pencarian user
 
-Scenario:Membuka halaman create manual project progress
+Scenario:Menambah Proyek Baru
   When User klik button Pilih Pembeli
   And Developer mengisi formulir tambah proyek
   Then Developer diarahkan ke halaman project progres

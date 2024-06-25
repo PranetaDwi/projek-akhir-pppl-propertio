@@ -13,7 +13,6 @@ import static stepDefinitions.Hooks.extent;
 public class LoginSteps {
     WebDriver driver;
     LoginPage loginPage;
-    ExtentTest test;
 
     public LoginSteps(){
         this.driver = Hooks.getDriver();
@@ -22,7 +21,6 @@ public class LoginSteps {
 
     @Given("Developer di halaman login")
     public void developer_di_halaman_login() {
-        test = extent.createTest("My First Test", "Sample description");
         driver.get("https://beta.propertio.id/login");
         Hooks.test.log(Status.INFO, "Developer di halaman login");
     }
@@ -32,6 +30,6 @@ public class LoginSteps {
         loginPage.enterEmail("developer@mail.com");
         loginPage.enterPassword("11111111");
         loginPage.clickLogin();
-        Hooks.test.log(Status.INFO, "Developer mengisi kredensial valid");
+        Hooks.test.log(Status.PASS, "Developer mengisi kredensial valid");
     }
 }
