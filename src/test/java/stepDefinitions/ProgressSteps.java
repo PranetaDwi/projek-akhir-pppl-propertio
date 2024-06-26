@@ -32,7 +32,6 @@ public class ProgressSteps {
         Thread.sleep(2000);
         progressPage.isDetailProjectDisplayed();
         Assert.assertEquals(progressPage.getActualUrl(), expectedUrl);
-        Hooks.openProgressPageTest.log(Status.INFO, "Developer diarahkan ke halaman progres dan alamat proyek");
     }
 
     @When("Developer mengeklik button tambah progress")

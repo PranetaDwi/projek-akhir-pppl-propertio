@@ -38,10 +38,6 @@ public class Hooks {
 
     static ExtentTest updateProgressTest;
 
-    static ExtentTest openFormulirCreateManualProjectTest;
-
-    static ExtentTest openProgressPageTest;
-
     @BeforeAll
     static void setupDriver() {
         extent = ExtentReportManager.getInstance();
@@ -54,7 +50,6 @@ public class Hooks {
         loginTest = extent.createTest("Tes Login");
         searchUserTest = extent.createTest("Tes Pencarian User");
         searchProjectTest = extent.createTest("Tes Pencarian Projek ");
-        openFormulirCreateManualProjectTest = extent.createTest("Tes Sampe halaman depan");
         addManualProjectTest = extent.createTest("Tes Menambahkan Proyek Manual");
         updateProjectTest = extent.createTest("Tes Update Proyek Manual");
         deleteProjectTest = extent.createTest("Tes Menghapus Proyek");
@@ -62,7 +57,6 @@ public class Hooks {
         negativeUpdateProjectTest = extent.createTest("Tes Update Proyek Manual Negatif");
         addProgressTest = extent.createTest("Tes Menambah Progress");
         updateProgressTest = extent.createTest("Tes Mengupdate Progress");
-        openProgressPageTest = extent.createTest("Tes Membuka halaman yang bener.");
         negativeAddProgressTest = extent.createTest("Test Manambah Progres Negatif");
     }
 

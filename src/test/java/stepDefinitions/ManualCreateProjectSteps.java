@@ -24,7 +24,7 @@ public class ManualCreateProjectSteps {
         manualCreateProjectPage.isTitleExist();
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
-        Hooks.openFormulirCreateManualProjectTest.log(Status.INFO, "Developer di halaman formulir tambah projek manual");
+        Hooks.addManualProjectTest.log(Status.INFO, "Developer di halaman formulir tambah projek manual");
     }
 
     @And("Developer mengisi formulir tambah proyek")

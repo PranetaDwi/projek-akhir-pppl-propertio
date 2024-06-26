@@ -94,7 +94,6 @@ public class ProjectProgressSteps {
     @Then("Developer mengeklik button lihat progress")
     public void Developer_mengeklik_button_lihat_progress() throws InterruptedException {
         projectProgressPage.clickProgressProyekButton();
-        Hooks.openProgressPageTest.log(Status.INFO, "Developer mengeklik button lihat progress");
     }
 
 }

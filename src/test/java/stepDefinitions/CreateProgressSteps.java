@@ -35,6 +35,7 @@ public class CreateProgressSteps {
         createProgressPage.clickSimpanButton();
         Thread.sleep(2000);
         Hooks.negativeAddProgressTest.log(Status.INFO, "Developer mengisi data progres valid");
+
     }
 
     @Then("Muncul pesan error")
