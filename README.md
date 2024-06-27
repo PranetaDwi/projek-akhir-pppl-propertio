@@ -20,7 +20,7 @@ Fitur ini dibangun menggunakan:
 
 ## Gambar Desain
 
-![Desain](https://drive.google.com/file/d/1gzrEYDRrYAqPPccH5D326yCffrk8HgkC/view?usp=sharing)
+![Desain](https://drive.google.com/uc?export=view&id=1gzrEYDRrYAqPPccH5D326yCffrk8HgkC)
 
 ## Dokumentasi Pengujian
 
