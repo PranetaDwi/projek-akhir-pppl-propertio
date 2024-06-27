@@ -8,4 +8,4 @@ Background: Sukses Login
 Scenario: Positive - Edit Proyek
   When User klik button edit proyek
   And Developer mengisi formulir dengan data lengkap
-  Then Developer diarahkan ke halaman progres
+  Then Developer diarahkan ke halaman project progres

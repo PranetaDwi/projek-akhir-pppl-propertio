@@ -3,6 +3,7 @@ package org.example.pages;
 import io.cucumber.java.sl.In;
 import org.example.objects.ProjectProgressObject;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,7 +67,12 @@ public class ProjectProgressPage {
     }
 
     public  boolean isDeletedProjectDisplayed() throws InterruptedException{
-        return driver.findElement(projectProgressObject.GetTextProjectabc()).isDisplayed();
+        try {
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(projectProgressObject.GetTextProjectabc()));
+            return element.isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
     public void clickEditProyekButton() throws InterruptedException{

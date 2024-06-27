@@ -27,11 +27,12 @@ public class ProjectProgressSteps {
         Assert.assertEquals(projectProgressPage.getActualUrlProjectProgress(), expectedUrl);
         Hooks.loginTest.log(Status.PASS, "Developer diarahkan ke halaman project progres");
         Hooks.addManualProjectTest.log(Status.PASS, "Developer diarahkan ke halaman project progres");
+        Hooks.updateProjectTest.log(Status.FAIL, "Developer gagal diarahkan ke halaman project progress");
     }
 
     @When("Developer mengisi kolom pencarian project progress")
     public void Developer_mengisi_kolom_pencarian_project_progress() throws InterruptedException {
-        projectProgressPage.enterProject("projek 12345");
+        projectProgressPage.enterProject("Rumah Makan Neta");
         Hooks.searchProjectTest.log(Status.INFO, "Developer mengisi kolom pencarian project progress");
     }
 
@@ -80,6 +81,7 @@ public class ProjectProgressSteps {
 
     @Then("Sistem menghapus proyek yang dipilih")
     public void Sistem_menghapus_proyek_yang_dipilih() throws InterruptedException {
+        Thread.sleep(1000);
         Assert.assertFalse(projectProgressPage.isDeletedProjectDisplayed());
         Hooks.deleteProjectTest.log(Status.INFO, "Sistem menghapus proyek yang dipilih");
     }

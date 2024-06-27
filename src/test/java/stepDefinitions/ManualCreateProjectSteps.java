@@ -66,7 +66,7 @@ public class ManualCreateProjectSteps {
     public void Developer_tetap_di_halaman_projek_progres() throws InterruptedException {
         String expectedUrl = "https://beta.propertio.id/project-progress/create/5?";
         Assert.assertEquals(manualCreateProjectPage.getActualUrl(), expectedUrl);
-        Hooks.negativeAddManualProjectTest.log(Status.INFO, "Developer tetap di halaman projek progres");
+        Hooks.negativeAddManualProjectTest.log(Status.PASS, "Developer tetap di halaman projek progres");
     }
 
 }
